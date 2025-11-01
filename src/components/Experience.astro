@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "ORBYS",
+    date: "Marzo 2023 - Presente",
+    description:
+      "Desarrollador Web Full Stack en ORBYS, una empresa de soluciones tecnológicas. Responsable del desarrollo y mantenimiento de aplicaciones web utilizando tecnologías como JavaScript, React, Node.js, Php, Symfony y bases de datos SQL.",
+    latest: true,
+  },
+  {
+    title: "Housia",
+    date: "Enero 2023 - Febrero 2023",
+    description:
+      "Desarrollador Web en Housia, una empresa de diseño y desarrollo de soluciones digitales. Encargado de la implementación de diseños en Figma a código utilizando tecnologías como React y Node.js.",
+  }
+];
+
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {EXPERIENCE.map((exp) => (
+        <li class="mb-10 ms-6">
+           <ExperienceItem {...exp} />
+        </li>
+    ))}
+</ol>
+
