@@ -1,0 +1,54 @@
+---
+import AstroIcon from '../components/icons/AstroIcon.astro';
+import TailwindIcon from '../components/icons/TailwindIcon.astro';
+
+const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "bg-gray-800 text-[#FF5D92]",
+        icon: AstroIcon
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-gray-800 text-[#73bcf6]",
+        icon: TailwindIcon
+    },
+}
+
+const PROJECTS = [
+    {
+        title: "Portfolio Website",
+        description: "A personal portfolio website to showcase my projects and skills.",
+        github: "https://github.com/jamorenofernandez/portfolio",
+        link: "#",
+        image: "/projects/portfolio.webp",
+        tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    }
+  
+];
+
+---
+
+{
+    PROJECTS.map(({title, description, github, link, image, tags}) => (
+       <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-4 flex-row mb-4">
+                {tags.map((tag) => (                    
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img 
+                class="rounded shadow-2xl shadow-white/10"
+                src={image} 
+                alt={`Captura de pantalla del proyecto ${title}`} 
+            />
+       </article>
+    ))
+}

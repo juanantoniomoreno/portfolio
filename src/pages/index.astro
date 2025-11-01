@@ -8,16 +8,22 @@ import SocialPill from '../components/SocialPill.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import BriefCase from '../components/icons/BriefCase.astro';
-
+import CodeIcon from '../components/icons/CodeIcon.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout 
 	title="Portfolio de Juan Antonio Moreno Fernández - Desarrollador y Programador Web con +2 años de experiencia" 
 	description="Bienvenido a mi portafolio profesional. Soy Juan Antonio Moreno Fernández, un desarrollador y programador web con más de 2 años de experiencia en la creación de sitios web y aplicaciones. Explora mis proyectos y habilidades aquí."
 >
-	<main>
+	<main class="px-4">
 		<SectionContainer id="top" class="py-44 pb-24">
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+			<img 
+				class="rounded-full size-14" 
+				src="https://avatars.githubusercontent.com/u/80280651?s=400&u=4ae43f8e055a7230d36d13b2117705d91c1fd797&v=4"
+				alt="juan photo"
+			/>
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
 				Hola, soy Juan Antonio 
 				<a 
 					href="https://www.linkedin.com/in/juan-antonio-moreno-fernandez" 
@@ -28,32 +34,40 @@ import BriefCase from '../components/icons/BriefCase.astro';
 					<Badge>Mi perfil</Badge>				
 				</a>
 			</h1>
-			<h2 class="text-2xl text-wrap">
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
 				<span class="text-yellow-200/90">Desarrollador Web.</span>
 				<span class="opacity-80">+2.5 años de experiencia.</span> 
 				<span class="text-red-100/90">De Murcia, España.</span>
 			</h2>
-			<nav class="flex gap-x-4 mt-8">
+			<nav class="flex flex-wrap gap-4 mt-8 ">
 				<SocialPill href="https://github.com/jamorenofernandez">
-					<GithubIcon class="size-6" /> Github
+					<GithubIcon class="size-4 md:size-6" /> Github
 				</SocialPill>
 
 				<SocialPill href="https://www.linkedin.com/in/juan-antonio-moreno-fernandez">
-					<LinkedinIcon class="size-6" /> LinkedIn
+					<LinkedinIcon class="size-4 md:size-6" /> LinkedIn
 				</SocialPill>
 
 				<SocialPill href="mailto:ja.morenofernandez@gmail.com">
-					<MailIcon class="size-6" /> Email
+					<MailIcon class="size-4 md:size-6" /> Email
 				</SocialPill>
 			</nav>
 		</SectionContainer>
 
 		<SectionContainer id="experiencia">
-			<h2 class="flex items-center gap-x-2 text-2xl font-semibold mb-6">
+			<h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-6">
 				<BriefCase class="size-7" />
 				Experiencia Laboral
 			</h2>			
 			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="flex items-center gap-x-2 text-3xl font-semibold mb-6">
+				<CodeIcon class="size-7" />
+				Proyectos Destacados
+			</h2>			
+			<Projects />
 		</SectionContainer>
 	</main>
 </Layout>
